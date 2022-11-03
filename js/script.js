@@ -33,8 +33,8 @@ all:[
 
 ],
 
-counter : 0
-
+counter : 0,
+auto:''
 
 }},
 
@@ -60,15 +60,18 @@ prev(){
 
 autoPlay(){
 
-let clock = setInterval(()=>{
-
+this.auto = setInterval(()=>{
+  
 this.next()
+
 
 },3000)
 
 },
 
 stopAutoPlay(){
+
+clearInterval(this.auto)
 
 }
 

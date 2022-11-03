@@ -22,7 +22,9 @@
 
 <div  class="cont-all">
 
-  <div @mouseenter="stopAutoPlay()" class="container">
+  <div @mouseover="stopAutoPlay()" 
+       @mouseout="autoPlay()" 
+       class="container">
    
     <div class="imgs">
       <h1 class="title">{{all[counter].titolo}}</h1>
