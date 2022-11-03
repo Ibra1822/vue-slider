@@ -11,7 +11,7 @@
 
   <script src='https://unpkg.com/vue@3'></script>
 
-  <title>Js-array-objects-carousel</title>
+  <title>Vue carousel</title>
 </head>
 <body>
   
@@ -20,26 +20,27 @@
 
 
 
-<div class="cont-all">
+<div  class="cont-all">
 
-  <div class="container">
+  <div @mouseenter="stopAutoPlay()" class="container">
    
     <div class="imgs">
-      <h1 class="title">{{titolo[counter]}}</h1>
-      <p class="desc">{{desc[counter]}}</p>
+      <h1 class="title">{{all[counter].titolo}}</h1>
+      <p class="desc">{{all[counter].desc}}</p>
 
-    <img :src="foto[counter]" alt=""> 
+      <img :src="all[counter].foto" alt="">
 
     </div>
 
-
     <div  class="pics">
 
-      <img v-for="(image, index) in foto "
-       :src="image" alt=""
-       :class="{'active': index === counter}"
+      <img v-for="item ,index in all "
+       :key="item.foto" 
+       :src="item.foto"
+       :class="{'active': counter === index}"
        @click="cambiaFoto(index)"
-       >
+       alt="">
+    
     </div>
   
     <div class="btns">
